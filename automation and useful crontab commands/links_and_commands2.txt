@@ -1,0 +1,15 @@
+1) ssh command to connect to your instance
+
+>>ssh -i <identification key path> <instance_username@instance_ip>
+
+1) scp command to transfer files/folders from your local pc to your ec2 instance
+
+scp -i <identification key path> <path to file in your local pc> <instance_username@instance_ip>:<instance path where the file will be saved>
+scp -i <identification key path> -r <path to folder in your local pc> <instance_username@instance_ip>:<instance path where the folder will be saved>
+
+i - enter insert mode
+esc - exit insert mode
+:wq! - close the file after saving changes
+:q! - close the file without making any changes
+
+1) Basic introduction of crontab - https://www.thegeekstuff.com/2009/06/15-practical-crontab-examples/

@@ -16,26 +16,22 @@ stocks = ['AMZN', 'MSFT', 'FB', 'GOOG']
 start = dt.datetime.today() - dt.timedelta(3650)
 end = dt.datetime.today()
 close_price = pd.DataFrame()
-ohlcv_data ={}
 
 for ticker in stocks:
     close_price[ticker] = yf.download(ticker, start, end)['Adj Close']
-    
-    
+
 close_price = close_price.iloc[::-1]
 
-
-
-#fillna(method = 'bfill',axis=1) fills na value with first nonna value
+#fillna(method = 'bfill',axis=1) fills na value with first non  na value
 close_price.dropna(inplace=True)
 
-daily_return = close_price.pct_change()
+daily_return = close_price.pct_change() #maybe close_price[ticker].pct_change()
 daily_return.mean()
 
-#daily_return.rolling(10, min_periods=10).mean()
-#daily_return.ewm(com=10, min_periods=10).mean()
+daily_return.rolling(10, min_periods=10).mean()
+daily_return.ewm(com=10, min_periods=10).mean()
 
-#close_price.plot(subplots = True, layout = (2,2))
+close_price.plot(subplots = True, layout = (2,2))
 
 fig, ax = plt.subplots()
 plt.style.use('ggplot')

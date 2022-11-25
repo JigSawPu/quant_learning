@@ -1,2 +1,2 @@
 # quant_learning
-technical strategies
+Repo for technical indicators, fetching market data and analysis

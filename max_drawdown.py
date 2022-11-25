@@ -14,7 +14,7 @@ ohlcv_data = {}
 for ticker in tickers:
     temp = yf.download(ticker, period='7mo', interval = '1d')
     temp.dropna(how= 'any', inplace=True)
-    ohlcv_data[ticker] = temp 
+    ohlcv_data[ticker] = temp
 
 def max_drawdown(DF):
     df = DF.copy()
