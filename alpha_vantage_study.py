@@ -10,7 +10,7 @@ from alpha_vantage.timeseries import TimeSeries
 import pandas as pd
 import time
 
-api_key = 'QBXRLUZ4BVHEWPSF'
+api_key = 'XXXXXXXXXXXXXXX'
 
 #ts = TimeSeries(key = api_key, output_format='pandas')
 #data = ts.get_daily(symbol='MSFT', outputsize='full')[0]
@@ -22,7 +22,7 @@ close_prices = pd.DataFrame()
 
 api_call_count = 0
 
-for ticker  in all_tickers:
+for ticker in all_tickers:
     start_time = time.time()
     ts = TimeSeries(key = api_key, output_format='pandas')
     data = ts.get_intraday(symbol=ticker, interval = '5min', outputsize='compact')[0]

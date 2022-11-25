@@ -38,7 +38,7 @@ for ticker in tickers:
 #just copy paster vol code
 
 def volatility(DF):
-    "function to calculate annualized volatility of a trading strategy"
+    "function to calculate annualized volatility"
     df = DF.copy()
     df["return"] = df["Adj Close"].pct_change()
     vol = df["daily_ret"].std() * np.sqrt(252)
